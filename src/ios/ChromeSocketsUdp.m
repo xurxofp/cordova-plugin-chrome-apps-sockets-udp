@@ -298,7 +298,7 @@ static NSString* stringFromData(NSData* data) {
 {
     NSNumber* socketId = [command argumentAtIndex:0];
     NSString* address = [command argumentAtIndex:1];
-    NSUInteger port = [[command argumentAtIndex:2] unsignedIntegerValue];
+    NSUInteger port = [[command argumentAtIndex:2] intValue];
 
     if ([address isEqualToString:@"0.0.0.0"])
         address = nil;
@@ -328,7 +328,7 @@ static NSString* stringFromData(NSData* data) {
 {
     NSNumber* socketId = [command argumentAtIndex:0];
     NSString* address = [command argumentAtIndex:1];
-    NSUInteger port = [[command argumentAtIndex:2] unsignedIntegerValue];
+    NSUInteger port = [[command argumentAtIndex:2] intValue];
     NSData* data = [command argumentAtIndex:3];
 
     ChromeSocketsUdpSocket* socket = _sockets[socketId];
